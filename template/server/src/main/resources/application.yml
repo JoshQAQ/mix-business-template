@@ -1,0 +1,31 @@
+# 各环境共享的应用配置。
+spring:
+  config:
+    import: classpath:bootstrap.yml
+  jackson:
+    deserialization:
+      # 拒绝把小数隐式转换成整数，避免修改请求截断记录 ID。
+      accept-float-as-int: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 单个应用实例的连接池上限。
+      maximum-pool-size: 20
+
+mybatis-plus:
+  configuration:
+    # 将下划线命名的列映射到驼峰命名的实体属性。
+    map-underscore-to-camel-case: true
+  type-aliases-package: @@PACKAGE_NAME@@.repository.entity.mysql
+  global-config:
+    banner: false
+
+mix:
+  web:
+    # 将参数校验错误交给 Mix Web 处理。
+    validation-advice: true
+    response:
+      # OpenAPI 和 Swagger UI 使用自身的响应格式。
+      ignore-wrap-uris:
+        - /v3/api-docs
+        - /swagger-ui

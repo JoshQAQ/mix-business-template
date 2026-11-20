@@ -1,0 +1,26 @@
+# Gradle and build output
+.gradle/
+.kotlin/
+build/
+out/
+
+# Local data and configuration
+data/
+*.log
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+local.properties
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# IDE, agent and OS files
+.idea/
+*.iml
+.vscode/
+/.omx/
+.DS_Store
+Thumbs.db

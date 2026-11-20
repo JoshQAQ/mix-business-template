@@ -1,0 +1,33 @@
+/generated/
+/.omx/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Gradle and build output
+.gradle/
+.kotlin/
+build/
+out/
+*.log
+
+# Local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+local.properties
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+# 测试环境，数据源连接参数由部署环境注入。
+spring:
+  datasource:
+    url: "${SPRING_DATASOURCE_URL:}"
+    username: "${SPRING_DATASOURCE_USERNAME:}"
+    password: "${SPRING_DATASOURCE_PASSWORD:}"
+
+logging:
+  level:
+    # 保留业务包的信息级及以上日志。
+    @@PACKAGE_NAME@@: INFO

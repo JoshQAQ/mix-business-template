@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="@@PACKAGE_NAME@@.repository.jdbc.TestRepository">
+    <!-- 显式绑定 test 表的列与实体属性。 -->
+    <resultMap id="TestResultMap" type="@@PACKAGE_NAME@@.repository.entity.mysql.Test">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <!-- 对应 TestRepository 继承的主键查询，参数 id 由 MyBatis 绑定。 -->
+    <select id="selectById" resultMap="TestResultMap">
+        SELECT id, name
+        FROM test
+        WHERE id = #{id}
+    </select>
+</mapper>

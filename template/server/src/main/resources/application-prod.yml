@@ -1,0 +1,17 @@
+# 生产环境，数据源连接参数由部署环境注入。
+spring:
+  datasource:
+    url: "${SPRING_DATASOURCE_URL:}"
+    username: "${SPRING_DATASOURCE_USERNAME:}"
+    password: "${SPRING_DATASOURCE_PASSWORD:}"
+
+# 同时关闭 OpenAPI JSON 和 Swagger UI。
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+logging:
+  level:
+    @@PACKAGE_NAME@@: INFO

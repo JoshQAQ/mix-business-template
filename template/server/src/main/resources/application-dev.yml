@@ -1,0 +1,11 @@
+# 本地开发环境，默认连接本机 MySQL，连接参数可通过环境变量覆盖。
+spring:
+  datasource:
+    url: "${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:3306/@@DATABASE_NAME@@}"
+    username: "${SPRING_DATASOURCE_USERNAME:root}"
+    password: "${SPRING_DATASOURCE_PASSWORD:}"
+
+logging:
+  level:
+    # 开发时显示业务包的调试日志。
+    @@PACKAGE_NAME@@: DEBUG
